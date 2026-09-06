@@ -48,3 +48,15 @@ Complete Lakebase Postgres database schema including:
 ---
 
 *Built as part of DataExpert Homework - Day 1*
+
+
+## Mini Reflexion on project 
+
+What was the most difficult part?
+ -> the most difficult was the part of making the backend writes correctly in the Lakebase
+
+How is Lakebase different from storing this data in a traditional analytics table?
+-> i don' know
+
+What feature would you add next?
+-> A reminder that ticket has lasted in open or in progress stage too long, emit an alert
