@@ -72,7 +72,7 @@ def ensure_sample_data():
     """Insert sample tickets and messages if the database is empty."""
     # Check if we already have data
     existing = lakebase.run_query("SELECT COUNT(*) as count FROM tickets")
-    if existing and existing[0].get('count', 0) > 0:
+    if existing and existing[0].get('count', 0) > 3:
         logger.info("Sample data already exists, skipping initialization")
         return
     
@@ -184,15 +184,6 @@ def index():
 # ============================================
 # Ticket Endpoints
 # ============================================
-
-# Initialize tables on startup
-with app.app_context():
-    try:
-        ensure_tables()
-        logger.info("Tables initialized successfully")
-    except Exception as e:
-        logger.error(f"Failed to initialize tables: {e}")
-
 
 @app.route("/tickets", methods=["GET"])
 def list_tickets():
@@ -390,6 +381,17 @@ def update_status(ticket_id):
         return jsonify({"error": "Ticket not found"}), 404
     
     return jsonify(result[0])
+
+
+# Initialize tables after all routes are defined
+with app.app_context():
+    try:
+        ensure_tables()
+        logger.info("Tables initialized successfully")
+        ensure_sample_data()  # Add this line
+        logger.info("Sample data initialization complete")
+    except Exception as e:
+        logger.error(f"Failed to initialize tables: {e}")
 
 
 if __name__ == '__main__':
