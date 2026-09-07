@@ -38,7 +38,7 @@ Complete Lakebase Postgres database schema including:
 * **Application**: Databricks App
 * **Schema**: PostgreSQL DDL with sample data
 * **Cloud**: AWS
-
+F
 ## Getting Started
 
 1. Deploy the schema using `schema.sql` to your Lakebase Postgres instance
@@ -50,13 +50,7 @@ Complete Lakebase Postgres database schema including:
 *Built as part of DataExpert Homework - Day 1*
 
 
-## Mini Reflexion on project 
 
-What was the most difficult part?
- -> the most difficult was the part of making the backend writes correctly in the Lakebase
+## !Github 
 
-How is Lakebase different from storing this data in a traditional analytics table?
--> i don' know
-
-What feature would you add next?
--> A reminder that ticket has lasted in open or in progress stage too long, emit an alert
+** github reppos : [https://github.com/benesh/dataexpert_homework_day_1_app_ticketing_system](https://github.com/benesh/dataexpert_homework_day_1_app_ticketing_system)
